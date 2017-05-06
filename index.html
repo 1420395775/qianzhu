@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>千里巴巴</title>
+	<meta name="author" content="Matthew Howell" />
+	<meta name="description" content="fullPage continuous scrolling demo." />
+	<meta name="keywords" content="fullpage,jquery,demo,scroll,loop,continuous" />
+	<meta name="Resource-type" content="Document" />
+
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css" />
+	<link rel="stylesheet" type="text/css" href="css/examples.css"/>
+	<link rel="stylesheet" href="css/swiper.min.css">
+	<link rel="stylesheet" href="css/swiper.css">
+	<link rel="stylesheet" href="css/demo.css" />
+
+	<script src="js/jquery.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/demo.js"></script>
+	<script src="js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="js/jquery.fullPage.js"></script>
+	<script type="text/javascript" src="js/examples.js"></script>
+	<!-- 翻页 -->
+	<script src="js/swiper.min.js"></script>
+	<!-- 鼠标翻页  -->
+
+   <!--[if IE]>
+    <script type="text/javascript">
+         var console = { log: function() {} };
+    </script>
+	<![endif]-->
+
+    <script type="text/javascript">
+		$(document).ready(function() {
+			$('#fullpage').fullpage({
+				anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', '5thPage', '6thPage', '7thPage', 'lastPage'],
+				menu: '#menu',
+				onLeave:function (index,nextIndex,direction) {
+					if(nextIndex >=2){
+						$('.navTop').css({height:70});
+						$('.logo img').css({width:220});
+						$('#menu li a').css({fontSize:16});
+						$('.phone span').css({fontSize:22});
+						$('.tex1').css({top:-70});
+						$('.line1').css({left:400,width:45});
+					}else{
+						$('.navTop').css({height:0});
+						$('.logo img').css({width:290});
+						$('#menu li a').css({fontSize:20});
+						$('.phone span').css({fontSize:25});
+						$('.tex1').css({top:75});
+						$('.line1').css({left:295,width:53});
+					}
+					if(nextIndex >=3){
+						$('.line1').css({left:470});
+					}
+					//第三
+					if(nextIndex >=4){
+					 	$('.line1').css({left:545});
+					}
+					//第四
+					if(nextIndex >=5){
+						$('.line1').css({left:615});
+					}
+					//第五
+					if(nextIndex >=6){
+						$('.line1').css({left:685});
+					}
+					//第六
+					if(nextIndex >=7){
+						$('.line1').css({left:755});
+					}
+					//第七
+					if(nextIndex >=8){
+						$('.line1').css({left:830});
+					}
+					//第八
+					// var aA =$('#menu li');
+					// var oLine =$('#menu .line1');
+					// aA.on('mouseover',function () {
+					// 	var Li =$(this).index();
+					// 	if(nextIndex < 4 ){
+					// 		oLine.css({left:Li*68+335});
+					// 	}
+					// })
+					// aA.on('mouseout',function () {
+					// 	var Li =$(this).index();
+					// 	oLine.css({left:Li*68+335});
+					// })
+					//导航
+				},
+			});
+		});
+
+	</script>
+	<!-- 上下翻页 -->
+  </head>
+  <body>
+  	<div class='header'>
+  		<div class='logo'>
+  			<img src="img/logo.png">
+	  	</div>
+	  	<a href="" class='tex1'>热烈祝贺我司荣获“国家高新技术企业”认定</a>
+	  	<ul id="menu">
+			<li data-menuanchor="firstPage" class="active">
+				<a href="#firstPage">首页</a>
+			</li>
+			<li data-menuanchor="secondPage">
+				<a href="#secondPage">业务</a>
+			</li>
+			<li data-menuanchor="3rdPage">
+				<a href="#3rdPage">案例</a>
+			</li>
+			<li data-menuanchor="4thpage">
+				<a href="#4thpage">客户</a>
+			</li>
+			<li data-menuanchor="5thPage">
+				<a href="#5thPage">品质</a>
+			</li>
+			<li data-menuanchor="6thPage">
+				<a href="#6thPage">增值</a>
+			</li>
+			<li data-menuanchor="7thPage">
+				<a href="#7thPage">关于</a>
+			</li>
+			<li data-menuanchor="lastPage" >
+				<a href="#lastPage">联系</a>
+			</li>
+			<i class='line1'></i>
+		</ul>
+		
+		<div class='phone'>
+			<i></i>
+			<a href="" title="网站建设免费咨询热线">
+				<span>4006-123-011</span>
+			</a>
+		</div>
+		<div class='navTop'></div>
+  	</div>
+  	<div class='nav_broadside'>
+  		<ul id='ul4'>
+  			<li class='up1'>
+  				<i class='up' id='up' ></i>
+  			</li>
+  			<li class='qq1'>
+  				<i class='qq'></i>
+				<div class='qq2'>
+					<p>
+					网站建设咨询
+					<br/>
+					在线沟通，请点我
+					<a href="">在线咨询</a>
+					</p>
+				</div>
+  			</li>
+  			<li class='phon1'>
+  				<i class='phon'></i>
+  				<div class='qq2 phon2'>
+					<p>
+					我要做网站，
+					<br/>
+					小助啊，抓紧给我来个电话！
+					<span class='inTex'>
+						<i class='glyphicon glyphicon-earphone'></i>
+						<input type="text" maxlength="11" value='您的号码' name=""
+						onfocus="if(value=='您的号码'){value=''}" onblur="if(value==''){value='您的号码'}">
+						<button>回拨</button>
+					</span>
+					</p>
+				</div>
+  			</li>
+  			<li class='wei1'>
+  				<i class='wei'></i>
+  				<div class='wei2'>
+					<img src="img/wechat_code.jpg">
+				</div>
+  			</li>
+  			<li class='down1'>
+  				<i class='down' id='down'></i>
+  			</li>	
+  		</ul>
+  		<span class='off2 off'></span>
+  	</div>
+	  	
+	<div id="fullpage">	
+
+		<div class="section" id="section0">
+		<!-- Swiper -->
+			<div class="swiper-container">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide wp-1" style="">
+						<div class='nine'></div>
+						<div class='tex2'>
+							<span>年专注，网站建设</span>
+							<i class='w1'></i>
+							<p>始于 2008 - 2017 展望未来
+								<br/>
+								专注于设计体验，专业于解决方案
+							</p>
+						</div>
+					</div>
+
+					<div class="swiper-slide wp-2" style="">
+						<div class='tex2_1'></div>
+						<div class='tex2_2'>
+							<span>设计控，也醉了</span>
+							<i class='w2'></i>
+							<p>不是非要高大上，只是醉心于设计
+								<br/>
+								我们想，再上一个好案例
+							</p>
+						</div>
+					</div>
+					<div class="swiper-slide wp-3" style="">
+						<div class='tex3_3'>
+							<span>技术派，论研发</span>
+							<i class='w3'></i>
+							<p>我说，业界没有最好的技术，只有最棒的技术开发者
+								<br/>
+								定制研发，为您的客户和团队
+							</p>
+						</div>
+					</div>
+					<div class="swiper-slide wp-4" style="">
+						<div class='tex4'>
+							<span>先入为主，布局未来</span>
+							<i class='w4'></i>
+						</div>
+						<div class='tex4_4'>
+							<p>全面布局 <span>PC </span>端与 <span>移动 </span>端
+								<br/>
+								抢占头等商机
+								<br/>
+								基于 <span>HTML5</span> 响应式布局，智能识别多种终端设备
+							</p>
+						</div>
+					</div>
+				</div>
+				<!-- Add Pagination -->
+				<div class="swiper-pagination"></div>
+			</div>
+		</div>
+		<!-- 第一页 -->
+		<div class="section  bac2" id="section1">
+		  	<div class='box'>
+		  		<p>我们能做什么</p>
+		  		<ul>
+		  			<li>
+		  				<i class='tool'></i>
+		  				<i class='cl_right'></i>
+		  				<i class='cl_left'></i>
+		  				<span class='tex5'>高端定制网站</span>
+		  				<div class='popup'>
+		  					<span>企业高端定制网站设计<br>彰显品牌形象</span>
+		  				</div>
+		  			</li>
+		  			<li>
+		  				<i class='move'></i>
+		  				<i class='cl_right'></i>
+		  				<i class='cl_left'></i>
+		  				<span class='tex5'>移动网站建设</span>
+		  				<div class='popup'>
+		  					<span>定制手机网站 / 微网站制作<br>布局移动互联网</span>
+		  				</div>
+		  			</li>
+		  			<li>
+		  				<i class='study'></i>
+		  				<i class='cl_right'></i>
+		  				<i class='cl_left'></i>
+		  				<span class='tex5'>业务系统研发</span>
+		  				<div class='popup'>
+		  					<span>基于 B/S 架构的系统研发<br>让业务办公轻松自如</span>
+		  				</div>
+		  			</li>
+		  			<li>
+		  				<i class='app'></i>
+		  				<i class='cl_right'></i>
+		  				<i class='cl_left'></i>
+		  				<span class='tex5'>APP应用程序</span>
+		  				<div class='popup'>
+		  					<span>基于 iOS / Android 应用开<br>发掌控智能终端时代</span>
+		  				</div>
+		  			</li>
+		  			<li>
+		  				<i class='server'></i>
+		  				<i class='cl_right'></i>
+		  				<i class='cl_left'></i>
+		  				<span class='tex5'>服务器运维</span>
+		  				<div class='popup'>
+		  					<span>我们不只提供云硬件和网络<br>更加注重技术运维</span>
+		  				</div>
+		  			</li>
+		  		</ul>
+		  		<div class='cl'></div>
+		  		<p class='one'>One-stop Internet service</p>
+		  	</div>
+		</div>
+		<!-- 第二页 -->
+		<div class="section bac3" id="section2">
+		   <div class='box box2'>
+		  		<p>案例欣赏</p>
+		  		<ul id='aa'>
+		  			<li>
+		  				<div class='top'>
+		  					<i class='glyphicon glyphicon-plus-sign'></i>
+		  				</div>
+		  				<img src="img/0110028059.jpg">
+		  				<p class='tex6'>
+		  					网页设计
+		  					<br/><span>ATA官网建设</span><br/>
+		  					官方网站 , 上市公司 , 红色
+		  				</p>
+		  				<div class='bottom'></div>
+		  			</li>
+		  			<li>
+		  				<div class='top'>
+		  					<i class='glyphicon glyphicon-plus-sign'></i>
+		  				</div>
+		  				<img src="img/1153507477.jpg">
+		  				<p class='tex6'>
+		  					网页设计
+		  					<br/><span>中远国际航空网站设计</span><br/>
+		  					国有企业 , 蓝色 , 欧美风格 , 上市公司
+		  				</p>
+		  				<div class='bottom'></div>
+		  			</li>
+		  			<li>
+		  				<div class='top'>
+		  					<i class='glyphicon glyphicon-plus-sign'></i>
+		  				</div>
+		  				<img src="img/0244085480.jpg">
+		  				<p class='tex6'>
+		  					网页设计
+		  					<br/><span>海尔嫩烤箱官方网站建设</span><br/>
+		  					上市公司 , 官方网站 , 欧美风格
+		  				</p>
+		  				<div class='bottom'></div>
+		  			</li>
+		  			<div class='much'>更多设计案例</div>
+		  		</ul>
+		  	</div>
+		</div>
+		<!-- 第三页 -->
+		<div class="section bac4" id="section2">
+		    <div class='box4'>
+		    	<i class='coop'></i><br/>
+		    	<span>他们与千助长期合作</span>
+		    	<ul>
+		    		<i class='active'></i>
+		    		<li class='cctv'><i></i></li>
+		    		<li class='qing'><i></i></li>
+		    		<li class='lenovo'><i></i></li>
+		    		<li class='xueyan'><i></i></li>
+		    		<li class='apple'><i></i></li>
+		    		<li class='auto'><i></i></li>
+		    		<li class='ata'><i></i></li>
+		    		<li class='cttic'><i></i></li>
+		    		<li class='haier'><i></i></li>
+		    		<li class='cosco'><i></i></li>
+		    	</ul>
+		    </div>
+		</div>
+		<!-- 第四页 -->
+		<div class="section bac5 box5" id="section2">
+			<i class='re'></i><br/>
+		    <span>不同媒介 , 同意精彩</span>
+		    <div class='box5_5'>
+		    	<div class='respo res'>
+		    		<ul class='ul1'>
+		    			<li class='re1'></li>
+		    			<li class='re2'></li>
+		    			<li class='re3'></li>
+		    		</ul>
+		    		<div class='cl'></div>
+		    		<p>
+		    			触及视觉灵魂的设计趋势
+		    			</br>
+		    			精心布局的用户体验
+		    			</br>
+		    			毫无顾忌地通过任何终端
+		    			</br>
+		    			呈现在客户的眼前
+		    		</p>
+		    	</div>
+		    	<div class='respo res2'>
+		    		<ul class='ul2'>
+		    			<li class='re1'></li>
+		    			<li class='re2'></li>
+		    			<li class='re3'></li>
+		    			<li class='re4'></li>
+		    		</ul>
+		    		<div class='cl'></div>
+		    		<p>
+		    			Html5 + CSS3 响应式布局
+		    			</br>
+		    			卓越的浏览器兼容性
+		    			</br>
+		    			因为高端，所以出众
+		    			</br>
+		    		</p>
+		    	</div>
+		    	<div class='respo res3'>
+		    		<ul class="ul1">
+		    			<li class='re1'></li>
+		    			<li class='re2'></li>
+		    			<li class='re3'></li>
+		    		</ul>
+		    		<div class='cl'></div>
+		    		<p>
+		    			基于 B/S 架构的网站建设
+		    			</br>
+		    			无障碍的跨平台应用
+		    			</br>
+		    			无须用户下载安装即可使用
+		    			</br>
+		    			云端管理，轻松维护
+		    		</p>
+		    	</div>
+		    	<div class='much ring'>响应式网站的照妖镜</div>
+		  	</div>
+		</div>
+		<!-- 第五页 -->
+		<div class="section bac6" id="section2">
+		    <div class='box6'>
+		  		<p>整合营销，抢占商机</p>
+		  		<ul>
+		  			<li>
+		  				<i class='sousuo'></i>
+		  				<i class='cl_right'></i>
+		  				<i class='cl_left'></i>
+		  				<span class='tex7'>搜索引擎</span>
+		  				<p>
+		  					SEO 优化
+		  					<br/>
+		  					搜索引擎竞价
+		  				</p>
+		  			</li>
+		  			<li>
+		  				<i class='weixin'></i>
+		  				<i class='cl_right'></i>
+		  				<i class='cl_left'></i>
+		  				<span class='tex7'>微信营销</span>
+		  				<p>
+		  					公众账号 / 微网站
+		  					<br/>
+		  					微盟 ( 微社区 )
+		  				</p>
+		  			</li>
+		  			<li>
+		  				<i class='weibo'></i>
+		  				<i class='cl_right'></i>
+		  				<i class='cl_left'></i>
+		  				<span class='tex7'>微博营销</span>
+		  				<p>
+		  					企业蓝V认证
+		  					<br/>
+		  					官方微博接入网站
+		  				</p>
+		  			</li>
+		  			<li>
+		  				<i class='server'></i>
+		  				<i class='cl_right'></i>
+		  				<i class='cl_left'></i>
+		  				<span class='tex7'>消息推送</span>
+		  				<p>
+		  					短信平台接口
+		  					<br/>
+		  					Email 推送
+		  				</p>
+		  			</li>
+		  			<li>
+		  				<i class='zhifu'></i>
+		  				<i class='cl_right'></i>
+		  				<i class='cl_left'></i>
+		  				<span class='tex7'>在线支付</span>
+		  				<p>
+		  					支付宝、银联
+		  					<br/>
+		  					Paypal 接口
+		  				</p>
+		  			</li>
+		  			<li>
+		  				<i class='luntan'></i>
+		  				<i class='cl_right'></i>
+		  				<i class='cl_left'></i>
+		  				<span class='tex7'>论坛聚人</span>
+		  				<p>
+		  					独立开发
+		  					<br/>
+		  					会员打通
+		  				</p>
+		  			</li>
+		  		</ul>
+		  	</div>
+		</div>
+		<!-- 第六页 -->
+		<div class="section bac7" id="section2">
+		 	<ul class='ul3'>
+		    	<li class='active'>思想</li>
+		    	<li class=''>关于</li>
+		    	<li class=''>荣誉</li>
+		    	<a href="" class='activn1'></a>
+			</ul>
+			<div class='more-container outline'>
+		   		<div class='swiper-wrapper content1'>
+			    	<div class='swiper-slide con1 siXiang'>
+			    		<span class='hou'>厚积薄发</span>
+			    		<p>登上峰顶，不是为了饱览风光，是为了寻找更高的山峰
+			    			<br/>
+			    			日出东方，告别了昨天的荣耀，将光芒照向更远的地方
+			    			<br/>
+			    			一路上，我们更在意如何积累和沉淀
+			    		</p>
+			    		<span>下一秒，让你看，我们到底有多强</span>
+			    	</div>
+
+			    	<div class='swiper-slide keji'>
+			    		<p>千助科技</p>
+			    		<p>成立于2008年，坐落于北京中关村科技园区，是中国优秀的互联网服务提供商。自成立以来，专注于高端网站建设、移动互联应用、B/S架构系统研发、云服务器部署和运维，为企业客户的互联网应用提供一站式服务。</p>
+			    		<p>我们始终坚持以客户需求为导向，为追求用户体验设计，提供有针对性的项目解决方案，千助人将不断地超越自我，挑战险峰！</p>
+			    	</div>
+
+			    	<div class='swiper-slide rong'>
+			    		<span>放下荣誉，放眼未来</span>
+			    		<ul>
+			    			<li>
+			    				<img src="img/point.png">
+			    				2009年 - 荣获海淀区创新企业
+			    			</li>
+			    			<li>
+			    				<img src="img/point.png">
+			    				2010年 - 设计联盟评选为金牌设计企业
+			    			</li>
+			    			<li>
+			    				<img src="img/point.png">
+			    				2010年 - 荣获中关村高新技术企业
+			    			</li>
+			    			<li>
+			    				<img src="img/point.png">
+			    				2011年 - 成功注册 " 千助 " 商标，树立品牌
+			    			</li>
+			    			<li>
+			    				<img src="img/point.png">
+			    				2013年 - 已拥有自主知识产权，国家软件著作权达12项之多
+			    			</li>
+			    		</ul>
+			    	</div>
+		    	</div>
+		    </div>
+		    <div class='statistics'>
+	    		<ul>
+	    			<li>
+	    				<span>611</span>
+	    				位企业客户信赖之选
+	    			</li>
+	    			<li>
+	    				<span>267</span>
+	    				上市/集团企业设计作品
+	    			</li>
+	    			<li>
+	    				<span>2010</span>
+	    				年度金牌设计企业
+	    			</li>
+	    			<li>
+	    				<span>12</span>
+	    				项国家软件著作权
+	    			</li>
+	    			<li>
+	    				<span>96%</span>
+	    				以上的客户续费率
+	    			</li>
+	    		</ul>
+	    	</div>
+		</div>
+		<!-- 第七页 -->
+		<div class="section bac8" id="section2">
+		    <div class='address'>
+		    	<img src="img/wechat_code.jpg">
+		    	<div class='add2 add2_2'>
+		    		<i></i>
+		    		<p>
+		    			中国 · 北京 中关村科技园
+		    			<br/>
+		    			联系电话：010-58851578 / 58859656
+		    			<br/>
+		    			地址：海淀区上地东路盈创动力E座905
+		    			<br/>
+		    			邮编：100085
+		    			<a href="">[ 工作机会 ]</a>
+		    		</p>
+		    	</div>
+		    	<div class='add2'>
+		    		<p>
+                		Email：Service@1000zhu.com
+		    			<br/>
+		    			中文域名：千助.中国 /千助.com 
+		    			<br/>
+		    			Copyright 2008-2015 千助科技 版权所有
+		    			<br/>
+		    			京ICP备 08102474 号
+		    			<br/>
+		    			京公网安备 11010802010984 号
+		    		</p>
+		    	</div>
+		    </div>
+		    <div class='qian'>
+		    	<i class=''></i><br/>
+		    	<i class=''></i>
+		    </div>
+		</div>
+		<!-- 第八页 -->
+		<div class='news'>
+			<span>NEWS:</span>
+			<a class='more' href="" title="更多文章动态">more</a>
+			<div class='tex3'>
+				<ul>
+					<li><a href="">品牌影响力！祝贺我司荣获“国家高新技 ...</a></li>
+					<li><a href="">还在问做网站哪家公司好？业内人士教你 ...</a></li>
+					<li><a href="">钱都砸去哪里了，为什么我的网站推广没 ...</a></li>
+					<li><a href="">钱都砸去哪里了，为什么我的网站推广没 ...</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class='down2'></div>
+	</div>
+	<!--翻页-->
+
+	<script>
+		var swiper = new Swiper('.swiper-container', {
+			pagination: '.swiper-pagination',
+			nextButton: '.swiper-button-next',
+			prevButton: '.swiper-button-prev',
+			paginationClickable: true,
+			spaceBetween: 0,
+			//centeredSlides: true,
+			loop: true,
+			autoplay: 2500,
+			autoplayDisableOnInteraction: false,
+			slidesPerView: 1,
+			width: window.innerWidth,
+
+		onSlideChangeEnd:function(swiper){
+        	
+            if(swiper.activeIndex==2){
+                $('.tex2_1').animate({'left':'0','opacity':1},400,'swing')
+                $('.tex2_2').animate({'left':'270','opacity':1},700,'swing')
+            };
+            if(swiper.activeIndex==3){
+            	$('.tex3_3').animate({'bottom':230},300,'swing')
+                $('.tex3_3 span').animate({'fontSize':35,'opacity':1},500,'swing')
+                $('.tex3_3 .w3').animate({'width':360,'opacity':1},500,'swing')
+                $('.tex3_3 p').delay(500).animate({'opacity':1},200,'swing')
+            }
+            if(swiper.activeIndex==4 || swiper.activeIndex==0){
+                $('.tex4').animate({'top':200,'opacity':1},600,'swing')
+                $('.tex4_4').animate({'bottom':250,'opacity':1},900,'swing')
+            };
+   		 }
+		
+	});
+
+
+
+	</script>
+	<!-- 鼠标翻页 -->
+  </body>
+</html>
